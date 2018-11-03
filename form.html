@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Postulate! </title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script src="/landingPage/script/script1.js"></script>
+    <link rel="shortcut icon" href="/landingPage/css/img/Lagash_iso_azul_32.png">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="/landingPage/css/style.css" />
+    <link rel="stylesheet" href="/landingPage/css/normalize.css">
+</head>
+<body>
+    <div class="father">
+        <header class="header">
+            <div class="menu">
+                <div class="logo">
+                    <a href="https://lagash.com"> <img src="/landingPage/css/img/Lagash_blanco_16.png"></a>
+                </div>
+                <div class="empty">
+                </div>
+                <div class="nav">
+                    <a href="#"><i class="fas fa-home"></i> Home</a> 
+                    <a href="#"><i class="fas fa-sign-out-alt"></i>Sign Out</a>
+                    
+                </div>
+            </div>
+            <div class="text-info">
+                <h1>Abierta la inscripción!</h1>
+                <h3>Si tenes entre 18 y 24 años, y sos de Buenos Aires, completa el formulario y te contactaremos.</h3>
+            <div class="img"> 
+                    <img id="lu" src="/landingPage/css/img/lagashUniversity.png">
+            </div>    
+            
+            </div>
+        </header>
+
+    <section class="section">
+        <div class="form">
+            <form action="" id="formPostulants" onsubmit="return validation()"></form>
+                    <div class="columnA">
+                        <p>
+                            <label>
+                                Nombre completo <br>
+                                <input type="text" id="name" name="name" maxlength="100" required="required" pattern="[A-Za-z ]+">
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                Fecha de nacimiento <br>
+                                <input type="date" id="birth" name="birth" required="required" min="1995-01-01" max="2001-01-01">
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                E-mail <br>
+                                <input type="email" id="email" name="email" required="required" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                Telefono <br>
+                                    <input type="number" id="phone" name="phone" required="required" pattern="[0-9]+">
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                    <i class="fab fa-github"></i>GitHub<br>
+                                    <input type="text" id="github" name="github" maxlength="40" pattern="[a-zA-Z0-9_]+">
+
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <i class="fab fa-linkedin"></i>LinkedIn <br>
+                                <input type="text" id="linkedin" name="linkedin" maxlength="40" pattern="[a-zA-Z0-9_]+">
+                            </label>
+                        </p>
+                </div>
+                <br>
+                <br>
+                <div>
+                    <h4>Formación<hr></h4>
+                        <p>
+                            <label>
+                                ¿Cual es tu grado de estudio alcanzado? <br>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="secondary" id="secondary"> Secundario
+                            </label>
+                            <br>
+                            <label>
+                                <input type="checkbox" name="tertiary" id="tertiary"> Terciario
+                            </label>
+                            <br>
+                            <label>
+                                <input type="checkbox" name="universitary" id="universitary"> Universitario
+                            </label>
+                            <br>
+                        </p>
+                        <p>
+                            <label>
+                                Institución <br>
+                                <input type="text" id="institution" name="institution" required="required" pattern="[A-Za-z0-9 ]+">
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                Carrera <br>
+                                <input type="text" id="career" name="carreer" required="required" pattern="[A-Za-z ]+">
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                Estado <br>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="ongoing" id="ongoing"> En curso
+                            </label>
+                            <br>
+                            <label>
+                                <input type="checkbox" name="finished" id="finished"> Finalizado
+                            </label>
+                            <br>
+                            <label>
+                                <input type="checkbox" name="abandoned" id="abandoned"> Abandonado
+                            </label>
+                            <br>
+                        </p>
+                        <br>
+                        <br>
+                </div>       
+                <div class="columnB">
+                        <p>
+                                <label>
+                                    ¿Tenes conocimiento del idioma inglés? <br>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="engYes" id="engYes"> Si
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="engNo" id="engNo"> No
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    Nivel hablado<br>
+                                </label> 
+                                <label>
+                                    <select name="speakEnglish" id="speakEnglish">
+                                        <option>Seleccione uno</option>
+                                        <option value="basic">Basico</option>
+                                        <option value="intermediate">Intermedio</option>
+                                        <option value="advanced">Avanzado</option>
+                                    </select>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    Nivel escrito<br>
+                                </label>
+                                <label>
+                                    <select name="writtenEnglish" id="writtenEnglish">
+                                        <option>Seleccione uno</option>
+                                        <option value="basic">Basico</option>
+                                        <option value="intermediate">Intermedio</option>
+                                        <option value="advanced">Avanzado</option>
+                                    </select>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    Nivel escucha<br>
+                                </label>
+                                <label>
+                                    <select name="listenEnglish" id="listenEnglish">
+                                        <option>Seleccione uno</option>
+                                        <option value="basic">Basico</option>
+                                        <option value="intermediate">Intermedio</option>
+                                        <option value="advanced">Avanzado</option>
+                                    </select>
+                                </label>
+                            </p>
+                            <p>
+                    </div>
+                    <h4>Conocimientos<hr></h4>
+                    <p>
+                        <label>
+                            ¿Qué tecnologías te gustaría aprender? <br>
+                        </label>
+                        <label>
+                        <textarea name="technologies" id="" cols="80" rows="10" required="required"></textarea>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            ¿Dónde escuchaste del programa? <br>
+                        </label>
+                        <label>
+                            <select name="infoProg">
+                                <option>Seleccione uno</option>
+                                <option value="Social Networks">Redes sociales</option>
+                                <option value="University">Facultad</option>
+                                <option value="By a friend">Por un amigo</option>
+                            </select>
+                        </label>
+                        </p>
+
+                        <p>
+                            <label>
+                                Otros ¿Cual? <br>
+                            </label>
+                            <label>
+                                <input type="text" id="other" name="other" maxlength="100" pattern="[A-Za-z ]+">
+                            </label>
+                        </p>
+            
+                        <p>
+                            <label>
+                                ¿A qué se debe tu interés en dedicarte a la programación? <br>
+                            </label>
+                            <label>
+                                <input type="text" id="intProg" name="intProg" required="required" pattern="[A-Za-z0-9 ]+">
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                ¿En tu círculo cercano, es tema de conversación la programación? <br>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="progYes" id="progYes"> Si
+                            </label>
+                            <label>
+                                <input type="checkbox" name="progNo" id="progNo"> No
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                ¿Has leído código fuente de cualquier tipo en alguna oportunidad? <br>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="codYes" id="codYes"> Si
+                            </label>
+                            <label>
+                                <input type="checkbox" name="codNo" id="codNo"> No
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                En caso de tener computadora propia o acceso a una, ¿tenés alguna herramienta de programación
+                                instalada? ¿Cuál o cuáles? <br>
+                            </label>
+                            <label>
+                                <textarea name="tools" id="tools" cols="80" rows="10" pattern="[a-zA-Z0-9_ ]+"></textarea>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                ¿Tenes computadora propia o acceso permanente a una? <br>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="pcYes" id="pcYes"> Si
+                            </label>
+                            <label>
+                                <input type="checkbox" name="pcNo" id="pcNo"> No
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                ¿Tenes alguna experiencia previa en programación?
+                                No hace falta que sea laboral, cualquier experiencia que puedas contarnos nos sirve para conocerte.
+                                Mencionar lenguajes de programación que tengas experiencia/conocimientos.) <br>
+                            </label>
+                            <label>
+                                <textarea name="experience" id="experience" cols="80" rows="10" required="required" pattern="[a-zA-Z0-9_ ]+"></textarea>
+                            </label>
+                        </p>
+                </div>
+
+                <div>
+                    <p>
+                        <label>
+                            <input id="button" type="submit" value="Aplica!">
+                        </label>
+                    </p>
+                </div>           
+    
+        </section>
+        <footer class="footer">
+            <div class="foot">
+                <a href="https://www.instagram.com/wearelagash/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/lagash/"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/lagashsystems/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://lagash.blog/"><i class="fab fa-blogger-b"></i></a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

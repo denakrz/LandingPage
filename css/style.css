@@ -1,0 +1,140 @@
+
+
+* {
+    /* FONDO IDEM HEADER BLANCO */
+    font-family: Poppins;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.father {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.header {
+    /* background: IMAGEN */
+    background: blue;
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+    .menu {
+        display: flex;
+        flex-flow: row nowrap;
+        height: 60px;
+        align-items: center;
+        background: rgba(0,0,0,.1);
+        border-bottom: 1px solid rgba(255,255,255,.5)
+    }
+
+        .logo {
+            flex: 1 1 auto;
+            color: white;
+
+        }
+        .empty {
+            flex: 5 1 auto;
+            display: flex;
+        }
+        .nav {
+            flex: 1 1 auto;
+            display: flex;
+            float: right;
+            
+        }
+            .nav a{
+                /* A LA DERECHA */
+                color: white;
+                font-size: 12px;
+                text-transform: uppercase;
+                padding: 0 5px;
+                letter-spacing: 2px;
+                text-decoration: none;
+                text-align: right;
+            }
+
+            .nav a:hover{
+                color: #B4B4B4;
+            }
+
+    .text-info {
+            height: 300px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        
+    }
+        h1{
+                color: white;
+                font-family: 'Poppins';
+                font-weight: 700;
+                text-align: center;
+                line-height: 1.5;
+                margin: 2%;
+        }
+        h3{
+                color: white;
+                font-weight: 600;
+                text-align: center;
+        }
+        .img {
+            
+                height: 200px;
+                width: 200px;
+        }
+
+        .img #lu{
+                    width: 100%;
+                    height: auto;
+        }
+
+.section {
+    background: white;
+    display: flex;
+    flex-flow: column nowrap;
+}
+    .form {
+        background: white;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+/* CENTRADO + GRANDE + AGREGAR COPYRIGHT LAGASH */
+.footer {
+    background:white;
+    display: flex;
+    justify-content: center;
+}
+    .foot {
+        width: 300px;
+        color: #1e4bf0;
+    }
+
+    .foot a{
+        color: #1E4BF0;
+    }
+
+    .foot a:hover{
+        color: #96C832;
+    }
+
+@media all and (max-width: 800px){
+    .menu{
+        flex-direction: column;
+        height: auto;
+    }
+
+    .text-info {
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+
