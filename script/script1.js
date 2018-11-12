@@ -1,3 +1,28 @@
+// VALIDATE --> no corre los ifs anidados
+
+// var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z\-]+\.[a-zA-z\-\.]+$/;
+
+/* $(document).ready(function(){
+    $("#button").click(function(){
+        var name = $("#name").val();
+        var email = $("#email").val();
+        var lastname = $("#lastname").val();
+
+        if(name == ""){
+            $("#message1").fadeIn();
+            return false;
+        } else {
+            $("message1").fadeOut();
+            if(email == "" || !expr.test(correo)){
+                $("menssage3").fadeIn();
+                return false;
+            }
+        }
+
+        return true;
+    });
+}); */
+
 function validation() {
     
     var stuSec = document.getElementById("secondary");
@@ -83,10 +108,61 @@ function validation() {
     if (pcYes.checked == false && pcNo.checked == false) {
         alert("Por favor indique si tiene computadora propia o acceso permanente a una");
         return false;
-    }
-
-    
-    
-    
+    }   
 
 }
+
+// AUTOCOMPLETE
+
+$(function() {
+    var alreadyFilled = false;
+    var states = ['Escuela Da Vinci', 'Instituto Tecnológico de Buenos Aires', 'Universidad Abierta Interamericana', 'Universidad de Belgrano', 'Universidad de Buenos Aires', 'Universidad de La Plata', 'Universidad de Lomas de Zamora', 'Universidad Tecnológica Nacional'];
+
+    function initDialog() {
+        clearDialog();
+        for (var i = 0; i < states.length; i++) {
+            $('.dialog').append('<div>' + states[i] + '</div>');
+        }
+    }
+    function clearDialog() {
+        $('.dialog').empty();
+    }
+    $('.autocomplete input').click(function() {
+        if (!alreadyFilled) {
+            $('.dialog').addClass('open');
+        }
+
+    });
+    $('body').on('click', '.dialog > div', function() {
+        $('.autocomplete input').val($(this).text()).focus();
+        $('.autocomplete .close').addClass('visible');
+        alreadyFilled = true;
+    });
+    $('.autocomplete .close').click(function() {
+        alreadyFilled = false;
+        $('.dialog').addClass('open');
+        $('.autocomplete input').val('').focus();
+        $(this).removeClass('visible');
+    });
+
+    function match(str) {
+        str = str.toLowerCase();
+        clearDialog();
+        for (var i = 0; i < states.length; i++) {
+            if (states[i].toLowerCase().startsWith(str)) {
+                $('.dialog').append('<div>' + states[i] + '</div>');
+            }
+        }
+    }
+    $('.autocomplete input').on('input', function() {
+        $('.dialog').addClass('open');
+        alreadyFilled = false;
+        match($(this).val());
+    });
+    $('body').click(function(e) {
+        if (!$(e.target).is("input, .close")) {
+            $('.dialog').removeClass('open');
+        }
+    });
+    initDialog();
+});
