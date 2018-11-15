@@ -23,7 +23,7 @@
     });
 }); */
 
-// HIDE ND SHOW ENGLISH
+//SHOW ENGLISH
 
 function hide() {
     if (document.getElementById("engYes").checked) {
@@ -36,6 +36,7 @@ function hide() {
 }
 
 // AUTOCOMPLETE
+
 $(function() {
     var alreadyFilled = false;
     var states = ['Escuela Da Vinci', 'Instituto Tecnológico de Buenos Aires', 'Universidad Abierta Interamericana', 'Universidad de Belgrano', 'Universidad de Buenos Aires', 'Universidad Nacional de La Matanza', 'Universidad de La Plata', 'Universidad de Lomas de Zamora', 'Universidad Tecnológica Nacional'];
@@ -90,7 +91,8 @@ $(function() {
     initDialog();
 });
 
-// BACK
+// BACK CONNECTION
+
 $(document).ready(function () {
     $("#button").click(function (e) {
         e.preventDefault();
