@@ -366,7 +366,27 @@
         flex-direction: column;
         height: auto;
     }
-    
+
+    .right{
+        text-align: center;
+    }
+
+    .inf{
+        text-align: center;
+    }
+
+    #open {
+        font-size: 30px;
+        padding:  0% 10%;
+        text-align: center;
+        padding-top: 2%;
+    }
+
+    #txt {
+        font-size: 18px;
+        text-align: center;
+        padding: 0% 10%;
+    }
 }
 
 @media all and (max-width:600px){
