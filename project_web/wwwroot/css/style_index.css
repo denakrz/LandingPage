@@ -52,6 +52,7 @@
 
         .nav a:hover{
             transform: scale(1.2);
+            margin:2%;
         }
 
         .anclas {
@@ -77,7 +78,7 @@
     .navs {
         display: flex;
         flex-flow: column nowrap;
-        margin: 15px;
+        margin: 10px;
         padding: 0;
     }
 
@@ -92,23 +93,22 @@
             height: 200px;
         }
         .a{
-            flex: 1 1 auto;
+            flex: 1 1 30%;
             text-align: center;
-            margin: 10px;
-            
+            margin: 0px;
         }
         .b{
-            flex: 1 1 auto;
+            flex: 1 1 30%;
             text-align: center;
             margin: 10px;
-            
+            height: 150px;
             border-left: #000 solid 1px;
             border-right: #000 solid 1px;
         }
         .c{
-            flex: 1 1 auto;
-            margin: 10px;
-            
+            flex: 1 1 30%;
+            margin: 0px;
+            height: 150px;
         }
 
             #aa{
@@ -117,6 +117,11 @@
                 padding: 0 5px;
                 text-decoration: none;
                 text-align: center;
+            }
+
+            #img1{
+                height: 20px;
+                width: auto;
             }
 
     .text {
@@ -172,7 +177,7 @@
     .section{
         display: flex;
         flex-flow: column nowrap;
-        padding: 4%;
+        padding: 6%;
         height: 900px;
     }
         .art{
@@ -221,7 +226,7 @@
 
                 .right p {
                     padding: 20px;
-                    font-size: 18px;
+                    font-size: 16px;
                 }
 
                 .right-line{
@@ -258,76 +263,40 @@
         flex-flow: row wrap;
         align-content: center;
         text-align: center;
-        margin-top: 2%;
+        padding-top: 4%;
+        padding-bottom: 0;
+        margin-bottom: 0;
     }
         .gps{
             flex: 1 1 40%;
         }
-            .gps h3{
+
+        .gps iframe{
+            padding: 6%;
+        }
+
+        .footer {
+            background:white;
+            display: flex;
+            justify-content: center;
+        }
+            .foot {
+                width: 500px;
+                height: 30px;
+                color: #666;
                 text-align: center;
-                font-size: 20px;
-                margin:2%;
+                padding: 1%;
             }
-
-        .works{
-            flex: 1 1 40%;
-        }
-
-            .works h3{
+        
+            .foot a{
+                color: #1E4BF0;
                 text-align: center;
-                font-size: 20px;
-                margin: 2%; 
+                margin: 10px;
             }
-
-            .works #w {
-                width: 450px;
-                height: 300px;
+        
+            .foot a:hover{
+                color: #96C832;
             }
-
-    .socialMedia {
-        background: pink;
-        text-align: center;
-        justify-content:center;
-        display:flex;
-        height: 320px;
-        align-items: center;
-        flex-direction: column;
-        margin: 3px;
-        padding: 0%;
-    }
-
-        .socialMedia #follow {
-            font-family: 'Poppins Bold';
-            font-size: 40px;
-            font-stretch: ultra-expanded;
-        }
-
-        .socialMedia p{
-            font-size: 15px;
-        }
-
-        .fb {
-            flex: 1 1 auto;
-            height: 10px;
-        }
-
-        .fb #002{
-            height: 10px;
-        }
-    
-
-    .footer {
-        background:white;
-        display: flex;
-        justify-content: center;
-    }
-        .foot {
-            width: 500px;
-            height: 30px;
-            color: #666;
-            text-align: center;
-            padding: 1%;
-        }
 
 @media all and (max-width: 800px){
     .section{
@@ -378,16 +347,20 @@
     }
         .links {
             flex-direction: column;
+            height: auto;
         }
         .a{
             flex-direction: column;
+            height: auto;
         }
         .b{
             flex-direction: column;
             border: none;
+            height: auto;
         }
         .c{
             flex-direction: column;
+            height: auto;
         }
     .links{
         flex-direction: column;
