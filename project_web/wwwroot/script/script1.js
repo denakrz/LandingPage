@@ -1,33 +1,19 @@
-// VALIDATE --> no corre los ifs anidados
+// VALIDATE RADIO INPUT
 
-// var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z\-]+\.[a-zA-z\-\.]+$/;
-
-/* $(document).ready(function(){
-    $("#button").click(function(){
-        var name = $("#name").val();
-        var email = $("#email").val();
-        var lastname = $("#lastname").val();
-
-        if(name == ""){
-            $("#message1").fadeIn();
-            return false;
-        } else {
-            $("message1").fadeOut();
-            if(email == "" || !expr.test(correo)){
-                $("menssage3").fadeIn();
-                return false;
-            }
-        }
-
-        return true;
-    });
-}); */
+var radio_buttons = $("input[name='english']");
+if( radio_buttons.filter(':checked').length == 0){
+  // None checked
+} else {
+  // If you need to use the result you can do so without
+  // another (costly) jQuery selector call:
+  var val = radio_buttons.val();
+}
 
 //SHOW ENGLISH
 
 function hide() {
     if (document.getElementById("engYes").checked) {
-        //document.getElementById("nivels").style.display="";
+        document.getElementById("nivels").style.display="";
         $('#nivels').show();
     } else {
         document.getElementById("nivels").style.display = "none";
@@ -96,8 +82,8 @@ $(function() {
 $(document).ready(function () {
     $("#button").click(function (e) {
         e.preventDefault();
-      //  if (!validation()) {
-     //       return;
+       // if (!validation()) {
+       //     return;
        // }
 
         var dataString = JSON.stringify({
@@ -137,7 +123,7 @@ $(document).ready(function () {
             dataType: "json",
             success: function (response) {
                 alert('Ha sido registrado satisfactoriamente');
-                //window.location.href = 'https://google.com';
+                window.location.href = 'url(/index.html)';
             },
             error: function (response) {
                 alert('Error')
