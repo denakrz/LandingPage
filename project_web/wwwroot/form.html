@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -6,12 +6,15 @@
     <title> Aplica! </title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.3.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script type="text/javascript" src="script/script1.js"></script>
     <link rel="shortcut icon" href="/css/img/Lagash_iso_azul_32.png">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" /> 
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
 </head>
 
 <body>
@@ -22,279 +25,286 @@
                     <a target="_blank" href="https://lagash.com"> <img src="./css/img/Lagash_blanco_16.png"></a>
                 </div>
                 <div class="nav">
-                    <a href="index.html"><i class="fas fa-home"></i> Home</a> 
+                    <a href="index.html"><i class="fas fa-home"></i> Home</a>
                 </div>
             </div>
             <div class="text-info">
                 <h1>Abierta la inscripción!</h1>
                 <h3>Si tenes entre 18 y 24 años, y sos de Buenos Aires, completa el formulario y te contactaremos.</h3>
-                <div class="img"> 
+                <div class="img">
                     <img id="lu" src="./css/img/lagashUniversity.png">
-                </div>    
+                </div>
             </div>
         </header>
-        
-    <section class="section">
-        <div class="form">
 
-            <form autocomplete="off" method="POST" id="formPostulants">
-                        
-                <p>
-                    <br><br>
-                    <h4>Datos personales <hr><br></h4>
-                </p>
-                           
-                <label>
-                    Nombre*<br>
-                    <input type="text" id="name" name="name" maxlength="50" required="required" pattern="[A-Za-z ]+">
-                </label>
-                <br>
-                <br>
-   
-                <label>Apellido*<br>
-                    <input type="text" id="lastname" name="lastname" maxlength="50" required="required" pattern="[A-Za-z ]+">
-                </label>
-                <br>
-                <br>
-                <label>
-                    Fecha de nacimiento* <br>
-                    <input type="date" id="birth" name="birth" required="required" min="1995-01-01" max="2001-01-01">
-                </label>
-                <br>
-                <br>
-                <label>
-                    DNI <br>
-                    <input type="text" id="dni" name="dni" required="required" maxlength="20" pattern="[A-Za-z0-9]+">
-                </label>
-                <br>
-                <br>
- 
-                <label>
-                    E-mail* <br>
-                    <input type="email" id="email" name="email" required="required" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
-                </label>
-                <br>
-                <br>
-                <label>
-                    Telefono <br>
-                    <input type="number" id="phoneHome" name="phoneHome" pattern="[0-9]+">
-                </label>
-                <br>
-                <br>
-                <label>
-                    Celular* <br>
-                    <input type="number" id="phoneMobile" name="phoneMobile" required="required" pattern="[0-9]+">
-                </label>
-                <br>
-                <br>
-                <label>
-                    <i class="fab fa-github"></i>GitHub<br>
-                    <input type="text" id="github" name="github" maxlength="40" pattern="[a-zA-Z0-9_]+">
-                </label>
-                <br>
-                <br>
-                <label>
-                    <i class="fab fa-linkedin"></i>LinkedIn <br>
-                    <input type="text" id="linkedin" name="linkedin" maxlength="40" pattern="[a-zA-Z0-9_]+">
-                </label>
-            
-                <br>
-                <br>
-                <p>
-                <h4>Formación<hr><br></h4>
-                </p>
-                <label>
-                    <p>¿Cual es tu grado de estudio alcanzado?* <br><br> </p>
-                    <input type="radio" name="study" id="secondary" class="form-radio" value="secondary" required> <label for="secondary"> Secundario </label>
+        <section class="section">
+            <div class="form">
+
+                <form autocomplete="off" method="POST" id="formPostulants">
+
+                    <p>
+                        <br><br>
+                        <h4>Datos personales <br></h4> <hr>
+                    </p>
                     <br>
+                    <br>
+
+                    <label>
+                        Nombre *<br>
+                        <input type="text" id="name" name="name" maxlength="50" required="required" pattern="[A-Za-z ]+">
+                    </label>
+                    <br>
+                    <br>
+
+                    <label>
+                        Apellido *<br>
+                        <input type="text" id="lastname" name="lastname" maxlength="50" required="required" pattern="[A-Za-z ]+">
+                    </label>
+                    <br>
+                    <br>
+                    <label>
+                        Fecha de nacimiento * <br>
+                        <input type="date" id="birth" name="birth" required="required" min="1995-01-01" max="2001-01-01">
+                    </label>
+                    <br>
+                    <br>
+                    <label>
+                        DNI * <br>
+                        <input type="text" id="dni" name="dni" required="required" maxlength="20" pattern="[A-Za-z0-9]+">
+                    </label>
+                    <br>
+                    <br>
+
+                    <label>
+                        E-mail * <br>
+                        <input type="email" id="email" name="email" required="required" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
+                    </label>
+                    <br>
+                    <br>
+                    <label>
+                        Telefono <br>
+                        <input type="number" id="phoneHome" name="phoneHome" pattern="[0-9]+">
+                    </label>
+                    <br>
+                    <br>
+                    <label>
+                        Celular *<br>
+                        <input type="number" id="phoneMobile" name="phoneMobile" required="required" pattern="[0-9]+">
+                    </label>
+                    <br>
+                    <br>
+                    <label>
+                        <i class="fab fa-github"></i>GitHub<br>
+                        <input type="text" id="github" name="github" maxlength="40" pattern="[a-zA-Z0-9_]+">
+                    </label>
+                    <br>
+                    <br>
+                    <label>
+                        <i class="fab fa-linkedin"></i>LinkedIn <br>
+                        <input type="text" id="linkedin" name="linkedin" maxlength="40" pattern="[a-zA-Z0-9_]+">
+                    </label>
+
+                    <br>
+                    <br>
+                    <p>
+                        <h4>Formación<br></h4> <hr><br><br>
+                    </p>
+                    <label>
+                        ¿Cual es tu grado de estudio alcanzado? *<br><br>
+                        <input type="radio" name="study" id="secondary" class="form-radio" value="secondary" required> <label for="secondary"> Secundario </label>
+                        <br>
                         <input type="radio" name="study" id="tertiary" class="form-radio" value="tertiary" required> <label for="tertiary"> Terciario </label>
-                    <br>
+                        <br>
                         <input type="radio" name="study" id="universitary" class="form-radio" value="universitary" required> <label for="universitary"> Universitario </label>
+                        <br>
+                        <br>
+                    </label>
                     <br>
-                    <br>
-                </label>
-                <br>
-                <label> 
-                    Institución* <br>
-                    <div class="autocomplete">
-                        <input type="text" id="institution" name="institution" required="required" pattern="[A-Za-z0-9 ]+">
-                        <span class="close">Cancel</span> 
-                        <div class="dialog">   
+                    <label>
+                        Institución *<br>
+                    </label>
+                        <div class="autocomplete">
+                            <label>
+                            <input type="text" id="institution" name="institution" required="required" pattern="[A-Za-z0-9 ]+">
+                            <span class="close">Cancel</span>
+                            </label>
+                            <div class="dialog">
+                            </div>
                         </div>
+
+                    <br>
+                    <label>
+                        Carrera *<br>
+                        <input type="text" id="career" name="career" required="required" pattern="[A-Za-z ]+">
+                    </label>
+                    <br>
+                    <label>
+                        Estado *<br><br>
+                        <input type="radio" name="study1" id="ongoing" class="form-radio" value="onGoing" required> <label for="ongoing"> En curso </label>
+                        <br>
+                        <input type="radio" name="study1" id="finished" class="form-radio" value="finished" required> <label for="finished"> Finalizado </label>
+                        <br>
+                        <input type="radio" name="study1" id="abandoned" class="form-radio" value="abandoned" required> <label for="abandoned"> Abandonado </label>
+                        <br>
+                        <br>
+                    </label>
+                    <br>
+                    <br>
+                    <p>
+                        <h4>Conocimientos<br></h4><hr><br>
+                    </p>
+                    <label>
+                        ¿Tenes conocimiento del idioma inglés? *<br><br>
+                        <input type="radio" name="english" id="engYes" class="form-radio" value="yes" onclick="hide()" required> <label for="engYes"> Si </label>
+                        <br>
+                        <input type="radio" name="english" id="engNo" class="form-radio" value="no" onclick="hide()" required> <label for="engNo"> No </label>
+                    </label>
+                    <br>
+                    <br>
+                    <div id="nivels" style="display:none">
+                        <label class="p">
+                            Nivel hablado *<br><br>
+                        </label>
+                        <label>
+                            <select name="speakEnglish" id="speakEnglish">
+                                <option value="">Seleccione uno</option>
+                                <option value="basic">Basico</option>
+                                <option value="intermediate">Intermedio</option>
+                                <option value="advanced">Avanzado</option>
+                            </select>
+                        </label>
+                        <br>
+                        <br>
+                        <label>
+                            Nivel escrito *<br><br>
+                        </label>
+                        <label>
+                            <select name="writtenEnglish" id="writtenEnglish" >
+                                <option value="">Seleccione uno</option>
+                                <option value="basic">Basico</option>
+                                <option value="intermediate">Intermedio</option>
+                                <option value="advanced">Avanzado</option>
+                            </select>
+                        </label>
+                        <br>
+                        <br>
+                        <label>
+                            Nivel escucha *<br><br>
+                        </label>
+                        <label>
+                            <select name="listenEnglish" id="listenEnglish">
+                                <option value="">Seleccione uno</option>
+                                <option value="basic">Basico</option>
+                                <option value="intermediate">Intermedio</option>
+                                <option value="advanced">Avanzado</option>
+                            </select>
+                        </label>
                     </div>
-                </label>
-                <br>
-                <label>
-                    Carrera* <br>
-                    <input type="text" id="career" name="carreer" required="required" pattern="[A-Za-z ]+">
-                </label>
-                <br>
-                <label>
-                    Estado* <br><br>
-                    <input type="radio" name="study1" id="ongoing" class="form-radio" value="onGoing" required> <label for="ongoing"> En curso </label>
-                    <br>
-                    <input type="radio" name="study1" id="finished" class="form-radio" value="finished" required> <label for="finished"> Finalizado </label>
-                    <br>
-                    <input type="radio" name="study1" id="abandoned" class="form-radio" value="abandoned" required> <label for="abandoned"> Abandonado </label>
                     <br>
                     <br>
-                </label>
-                <br>
-                <br>
-                <p>
-                <h4>Conocimientos<hr><br></h4>
-                </p>
-                <label>
-                    ¿Tenes conocimiento del idioma inglés?* <br><br>
-                    <input type="radio" name="english" id="engYes" class="form-radio" value="yes" onclick="hide()" required> <label for="engYes"> Si </label>
-                    <br>
-                    <input type="radio" name="english" id="engNo" class="form-radio" value="no" onclick="hide()" required> <label for="engNo"> No </label>
-                </label>
-                <br>
-                <br>
-                <div id="nivels" style="display:none">
-                    <label class="p">
-                        Nivel hablado*<br><br>
+
+                    <label>
+                        ¿Qué tecnologías te gustaría aprender? *<br><br>
                     </label>
                     <label>
-                        <select name="speakEnglish" id="speakEnglish">
-                            <option>Seleccione uno</option>
-                            <option value="basic">Basico</option>
-                            <option value="intermediate">Intermedio</option>
-                            <option value="advanced">Avanzado</option>
+                        <textarea name="technologies" id="technologies" cols="80" rows="10" required="required"></textarea>
+                    </label>
+                    <br>
+                    <br>
+                    <label>
+                        ¿Dónde escuchaste del programa? *<br><br>
+                    </label>
+                    <label>
+                        <select name="infoProg" id="infoProg" required>
+                            <option value="">Seleccione uno</option>
+                            <option value="Social Networks">Redes sociales</option>
+                            <option value="University">Facultad</option>
+                            <option value="By a friend">Por un amigo</option>
                         </select>
                     </label>
                     <br>
                     <br>
                     <label>
-                    Nivel escrito*<br><br>
+                        Otros ¿Cual? <br><br>
                     </label>
                     <label>
-                        <select name="writtenEnglish" id="writtenEnglish">
-                            <option>Seleccione uno</option>
-                            <option value="basic">Basico</option>
-                            <option value="intermediate">Intermedio</option>
-                            <option value="advanced">Avanzado</option>
-                        </select>
+                        <input type="text" id="other" name="other" maxlength="100" pattern="[A-Za-z ]+">
                     </label>
                     <br>
                     <br>
                     <label>
-                    Nivel escucha*<br><br>
+                        ¿A qué se debe tu interés en dedicarte a la programación? *<br><br>
                     </label>
                     <label>
-                        <select name="listenEnglish" id="listenEnglish">
-                            <option>Seleccione uno</option>
-                            <option value="basic">Basico</option>
-                            <option value="intermediate">Intermedio</option>
-                            <option value="advanced">Avanzado</option>
-                        </select>
+                        <input type="text" id="intProg" name="intProg" required="required" pattern="[A-Za-z0-9 ]+">
                     </label>
-                </div>
-                <br>
-                <br>
-                  
-                <label>
-                    ¿Qué tecnologías te gustaría aprender?* <br><br>
-                </label>
-                <label>
-                    <textarea name="technologies" id="technologies" cols="80" rows="10" required="required"></textarea>
-                </label>
-                <br>
-                <br>
-                <label>
-                    ¿Dónde escuchaste del programa?* <br><br>
-                </label>
-                <label>
-                    <select name="infoProg" id="infoProg">
-                        <option>Seleccione uno</option>
-                        <option value="Social Networks">Redes sociales</option>
-                        <option value="University">Facultad</option>
-                        <option value="By a friend">Por un amigo</option>
-                    </select>
-                </label>
-                <br>
-                <br>
-                <label>
-                    Otros ¿Cual? <br><br>
-                </label>
-                <label>
-                    <input type="text" id="other" name="other" maxlength="100" pattern="[A-Za-z ]+">
-                </label>
-                <br>
-                <br>
-                <label>
-                   ¿A qué se debe tu interés en dedicarte a la programación?* <br><br>
-                </label>
-                <label>
-                    <input type="text" id="intProg" name="intProg" required="required" pattern="[A-Za-z0-9 ]+">
-                </label>
-                <br>
-                <br>
-                <label>
-                    ¿En tu círculo cercano, es tema de conversación la programación?* <br><br>
-                    <input type="radio" name="converTheme" id="converYes" class="form-radio" value="yes" required> <label for="converYes"> Si </label>
                     <br>
-                    <input type="radio" name="converTheme" id="converNo" class="form-radio" value="no" required> <label for="converNo"> No </label>
-                </label>
-                <br>
-                <br>
-                <label>
-                    ¿Has leído código fuente de cualquier tipo en alguna oportunidad?* <br><br>
-                    <input type="radio" name="cod" id="codYes" class="form-radio" value="yes"> <label for="codYes"> Si </label>
                     <br>
-                    <input type="radio" name="cod" id="codNo" class="form-radio" value="no"> <label fot="codNo"> No </label>
-                </label>
-                <br>
-                <br>
-                <label>
-                En caso de tener computadora propia o acceso a una, ¿tenés alguna herramienta de programación instalada? ¿Cuál o cuáles? <br><br>
-                </label>
-                <label>
-                    <textarea name="tools" id="tools" cols="80" rows="10" pattern="[a-zA-Z0-9_ ]+"></textarea>
-                </label>
-                <br>
-                <label>
-                    ¿Tenes computadora propia o acceso permanente a una?* <br><br>
-                    <input type="radio" name="pc" id="pcYes" class="form-radio" value="yes"> <label for="pcYes">Si</label>
-                    <br>
-                    <input type="radio" name="pc" id="pcNo" class="form-radio" value="no"> <label for="pcNo"> No </label>
-                </label>
-                <br>
-                <br>
-                <label>
-                    ¿Tenes alguna experiencia previa en programación? No hace falta que sea laboral, cualquier experiencia que puedas contarnos nos sirve para conocerte. Mencionar lenguajes de programación que tengas experiencia/conocimientos.)* <br><br>
-                </label>
-                <label>
-                    <textarea name="experience" id="experience" cols="80" rows="10" required="required" pattern="[a-zA-Z0-9_ ]+"></textarea>
-                </label>
-                <div class="button">
                     <label>
-                        <button class="button1" id="button" >Aplica!</button>
+                        ¿En tu círculo cercano, es tema de conversación la programación? *<br><br>
+                        <input type="radio" name="converTheme" id="converYes" class="form-radio" value="yes" required> <label for="converYes"> Si </label>
+                        <br>
+                        <input type="radio" name="converTheme" id="converNo" class="form-radio" value="no" required> <label for="converNo"> No </label>
                     </label>
-                </div>
-                <br>
-                
-                <div class="buttonD">
+                    <br>
+                    <br>
                     <label>
-                        <input class="button2" id="reset" type="reset" value="Descartar :(">
+                        ¿Has leído código fuente de cualquier tipo en alguna oportunidad? *<br><br>
+                        <input type="radio" name="cod" id="codYes" class="form-radio" value="yes" required> <label for="codYes"> Si </label>
+                        <br>
+                        <input type="radio" name="cod" id="codNo" class="form-radio" value="no" required> <label fot="codNo"> No </label>
                     </label>
-                </div>
-                    
+                    <br>
+                    <br>
+                    <label>
+                        En caso de tener computadora propia o acceso a una, ¿tenés alguna herramienta de programación instalada? ¿Cuál o cuáles? <br><br>
+                    </label>
+                    <label>
+                        <textarea name="tools" id="tools" cols="80" rows="10" pattern="[a-zA-Z0-9_ ]+"></textarea>
+                    </label>
+                    <br>
+                    <label>
+                        ¿Tenes computadora propia o acceso permanente a una? *<br><br>
+                        <input type="radio" name="pc" id="pcYes" class="form-radio" value="yes" required> <label for="pcYes">Si</label>
+                        <br>
+                        <input type="radio" name="pc" id="pcNo" class="form-radio" value="no" required> <label for="pcNo"> No </label>
+                    </label>
+                    <br>
+                    <br>
+                    <label>
+                        ¿Tenes alguna experiencia previa en programación? No hace falta que sea laboral, cualquier experiencia que puedas contarnos nos sirve para conocerte. Mencionar lenguajes de programación que tengas experiencia/conocimientos.) *<br><br>
+                    </label>
+                    <label>
+                        <textarea name="experience" id="experience" cols="80" rows="10" required="required" pattern="[a-zA-Z0-9_ ]+"></textarea>
+                    </label>
+                    <div class="button">
+                        <label>
+                            <button class="button1" id="button">Aplica!</button>
+                        </label>
+                    </div>
+                    <br>
+
+                    <div class="buttonD">
+                        <label>
+                            <input class="button2" id="reset" type="reset" value="Descartar :(">
+                        </label>
+                    </div>
+                </form>
+
             </div>
-        </form>          
-    </section>
 
-    <footer class="footer">
-        <div class="foot">
-            <p>Follow us</p>
-            <a target="_blank" href="https://www.instagram.com/wearelagash/"><i class="fab fa-instagram"></i></a>
-            <a target="_blank" href="https://www.linkedin.com/company/lagash/"><i class="fab fa-linkedin-in"></i></a>
-            <a target="_blank" href="https://www.facebook.com/lagashsystems/"><i class="fab fa-facebook-f"></i></a>
-            <a target="_blank" href="https://lagash.blog/"><i class="fab fa-blogger-b"></i></a>
-        </div>
-    </footer>
+        </section>
 
-</div>
+        <footer class="footer">
+            <div class="foot">
+                <p>Follow us</p>
+                <a target="_blank" href="https://www.instagram.com/wearelagash/"><i class="fab fa-instagram"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/company/lagash/"><i class="fab fa-linkedin-in"></i></a>
+                <a target="_blank" href="https://www.facebook.com/lagashsystems/"><i class="fab fa-facebook-f"></i></a>
+                <a target="_blank" href="https://lagash.blog/"><i class="fab fa-blogger-b"></i></a>
+            </div>
+        </footer>
+
+    </div>
 </body>
 </html>

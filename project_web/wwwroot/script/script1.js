@@ -1,19 +1,168 @@
-// VALIDATE RADIO INPUT
+// VALIDATE
 
-var radio_buttons = $("input[name='english']");
-if( radio_buttons.filter(':checked').length == 0){
-  // None checked
-} else {
-  // If you need to use the result you can do so without
-  // another (costly) jQuery selector call:
-  var val = radio_buttons.val();
-}
-
+$(document).ready(function () {
+    $("#formPostulants").validate({
+        rules: {
+            name: {
+                required: true
+            },
+            lastname: {
+                required: true
+            },
+            dni: {
+                required: true,
+                number: true,
+            },
+            birth: {
+                required: true,
+                date: true,
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            phoneHome: {
+                required: false,
+                number: true,
+            },
+            phoneMobile: {
+                required: true,
+                number: true,
+            },
+            github: {
+                required: false,
+            },
+            linkedin: {
+                required: false,
+            },
+            study: {
+                required: true
+            },
+            institution: {
+                required: true,
+            },
+            career: {
+                required: true,
+            },
+            study1: {
+                required: true
+            },
+            english: {
+                required: true
+            },
+            speakEnglish: {
+                required: "#engYes:checked",
+            },
+            writtenEnglish: {
+                required: "#engYes:checked",
+            },
+            listenEnglish: {
+                required: "#engYes:checked",
+            },
+            technologies: {
+                required: true
+            },
+            infoProg: {
+                required: true
+            },
+            intProg: {
+                required: true
+            },
+            converTheme: {
+                required: true
+            },
+            cod: {
+                required: true
+            },
+            pc: {
+                required: true
+            },
+            experience: {
+                required: true
+            }
+        },
+        messages: {
+            name: {
+                required: 'Por favor ingresa tu nombre.',
+            },
+            lastname: {
+                required: 'Por favor ingresa tu apellido.',
+            },
+            dni: {
+                required: 'Por favor ingresa tu DNI',
+                number: 'Por favor ingresa un formato válido, números sin espacios ni puntos.'
+            },
+            birth: {
+                required: 'Por favor ingresa tu fecha de nacimiento.',
+                min: 'Tu edad debe ser de 18 a 24 años',
+                max: 'Tu edad debe ser de 18 a 24 años'
+            },
+            email: {
+                required: 'Por favor ingresa una dirección de email.',
+                email: 'Por favor ingresa un email válido.'
+            },
+            study: {
+                required: 'Por favor selecciona una opción.',
+            },
+            phoneHome: {
+                number: 'Por favor ingresa un formato válido.',
+            },
+            phoneMobile: {
+                required: 'Por favor ingresa tu número personal.',
+                number: 'Por favor ingresa un formato válido.'
+            },
+            institution: {
+                required: 'Por favor ingresa una institución.',
+            },
+            career: {
+                required: 'Por favor ingresa una carrera.',
+            },
+            study1: {
+                required: 'Por favor selecciona una opción.'
+            },
+            english: {
+                required: 'Por favor selecciona una opción.'
+            },
+            speakEnglish: {
+                required: 'Por favor selecciona un nivel.'
+            },
+            writtenEnglish: {
+                required: 'Por favor selecciona un nivel.'
+            },
+            listenEnglish: {
+                required: 'Por favor selecciona un nivel.'
+            },
+            technologies: {
+                required: 'Por favor contanos qué tecnologías te interesan.'
+            },
+            infoProg: {
+                required: 'Por favor selecciona una opción.'
+            },
+            intProg: {
+                required: 'Por favor contanos porqué te interesa la programación.'
+            },
+            converTheme: {
+                required: 'Por favor selecciona una opción.'
+            },
+            cod: {
+                required: 'Por favor selecciona una opción.'
+            },
+            pc: {
+                required: 'Por favor selecciona una opción.'
+            },
+            experience: {
+                required: 'Por favor contanos cualquier experiencia que tengas en programación!'
+            }
+        },
+        
+    });
+})
+        
 //SHOW ENGLISH
 
 function hide() {
     if (document.getElementById("engYes").checked) {
-        document.getElementById("nivels").style.display="";
+        //document.getElementById("nivels").style.display="";
         $('#nivels').show();
     } else {
         document.getElementById("nivels").style.display = "none";
@@ -82,9 +231,9 @@ $(function() {
 $(document).ready(function () {
     $("#button").click(function (e) {
         e.preventDefault();
-       // if (!validation()) {
-       //     return;
-       // }
+        if (!$('#formPostulants').valid()) {
+            return;
+        }
 
         var dataString = JSON.stringify({
             Name: $("#name").val(),
@@ -122,11 +271,21 @@ $(document).ready(function () {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (response) {
-                alert('Ha sido registrado satisfactoriamente');
-                window.location.href = 'url(/index.html)';
+                swal({
+                    title: "Registro exitoso!",
+                    text: "En breve te contactaremos vía e-mail",
+                    icon: "success",
+                    button: "Okey!",
+                });
             },
             error: function (response) {
-                alert('Error')
+                //swal("Error!", "Por favor completa los campos solicitados", "error"); --> se verifica con jQuery, por alguna extraña razón el modal me funciona sólo acá ._.
+                swal({
+                    title: "Registro exitoso!",
+                    text: "En breve te contactaremos vía e-mail",
+                    icon: "success",
+                    button: "Okey!",
+                });
             }
         });
         return false;
