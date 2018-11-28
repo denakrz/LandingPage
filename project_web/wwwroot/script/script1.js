@@ -279,7 +279,7 @@ $(document).ready(function () {
                 });
             },
             error: function (response) {
-                //swal("Error!", "Por favor completa los campos solicitados", "error"); --> se verifica con jQuery, por alguna extraña razón el modal me funciona sólo acá ._.
+                // swal("Error!", "", "error"); // --> se verifica con jQuery, por alguna extraña razón el modal me funciona sólo acá ._.
                 swal({
                     title: "Registro exitoso!",
                     text: "En breve te contactaremos vía e-mail",
