@@ -6,10 +6,11 @@
     <title> Bienvenido a Lagash University! </title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="script/script1.js"></script>
     <link rel="shortcut icon" href="/css/img/Lagash_iso_azul_32.png">
-    <link rel="stylesheet" href="/css/normalize.css">
+    <!--<link rel="stylesheet" href="/css/normalize.css">-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/style_postulant.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/style_postulant.css" />
 </head>
 <body>
     <div class="father">
@@ -28,7 +29,6 @@
                 </div>
             </div>
         </header>
-
         <main>
             <section class="m001">
                 <div class="t001">
@@ -36,20 +36,48 @@
                     <div class="lineh1"></div>
                     <br><br>
                     <p>En esta página verás tu proceso de selección para el programa Lagash University! </p>
-                    <div class="imgTrack"></div>
+                    <div class="imgTrack">
+                        <div class="progress">
+                            <div class="circle done">
+                                <span class="label"><i class="fas fa-user-circle"></i></span>
+                                <span class="title">Postulación</span>
+                            </div>
+                            <span class="bar done"></span>
+                            <div class="circle done">
+                                <span class="label"><i class="fas fa-users"></i></span>
+                                <span class="title">Entrevista Grupal</span>
+                            </div>
+                            <span class="bar half"></span>
+                            <div class="circle active">
+                                <span class="label"><i class="fas fa-user-friends"></i></span>
+                                <span class="title">Entrevista Individual</span>
+                            </div>
+                            <span class="bar"></span>
+                            <div class="circle">
+                                <span class="label"><i class="fas fa-info"></i></span>
+                                <span class="title">Charla Informativa</span>
+                            </div>
+                            <span class="bar"></span>
+                            <div class="circle">
+                                <span class="label"><i class="fas fa-tasks"></i></span>
+                                <span class="title">Capacitación SCRUM</span>
+                            </div>
+                            <span class="bar"></span>
+                            <div class="circle">
+                                <span class="label"><i class="fas fa-laptop"></i></span>
+                                <span class="title">Capacitación Programación</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
                 <div class="t002">
                     <h5>Estado</h5>
                     <div class="back"></div>
                 </div>
-
                 <div class="t003">
-
                 </div>
             </section>
         </main>
-
 
         <footer class="footer">
             <div class="foot">
@@ -63,8 +91,6 @@
                 <a target="_blank" href="https://lagash.blog/"><i class="fab fa-blogger-b"></i></a>
             </div>
         </footer>
-
     </div>
-
 </body>
 </html>

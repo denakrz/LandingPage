@@ -1,3 +1,31 @@
+// STEP BY STEP BAR
+
+$(document).ready(function () {
+    var i = 1;
+    $('.progress .circle').removeClass().addClass('circle');
+    $('.progress .bar').removeClass().addClass('bar');
+    setInterval(function () {
+        $('.progress .circle:nth-of-type(' + i + ')').addClass('active');
+
+        $('.progress .circle:nth-of-type(' + (i - 1) + ')').removeClass('active').addClass('done');
+
+        $('.progress .circle:nth-of-type(' + (i - 1) + ') .label').html('&#10003;');
+
+        $('.progress .bar:nth-of-type(' + (i - 1) + ')').addClass('active');
+
+        $('.progress .bar:nth-of-type(' + (i - 2) + ')').removeClass('active').addClass('done');
+
+        i++;
+
+        if (i == 0) {
+            $('.progress .bar').removeClass().addClass('bar');
+            $('.progress div.circle').removeClass().addClass('circle');
+            i = 1;
+        }
+    }, 3000);
+});
+
+
 // SHOW TOPBUTTON WHEN THE USER SCROLLS DOWN 20PX
 
 window.onscroll = function () { scrollFunction() };
@@ -178,10 +206,10 @@ $(document).ready(function () {
                 required: 'Por favor contanos cualquier experiencia que tengas en programación!'
             }
         },
-        
+
     });
 })
-        
+
 //SHOW ENGLISH
 
 function hide() {
@@ -206,7 +234,7 @@ function hid() {
 }
 
 // AUTOCOMPLETE
-$(function() {
+$(function () {
     var alreadyFilled = false;
     var states = ['Escuela Da Vinci', 'Instituto Tecnológico de Buenos Aires', 'Universidad Abierta Interamericana', 'Universidad de Belgrano', 'Universidad de Buenos Aires', 'Universidad Nacional de La Matanza', 'Universidad de La Plata', 'Universidad de Lomas de Zamora', 'Universidad Tecnológica Nacional'];
 
@@ -314,7 +342,7 @@ $(document).ready(function () {
                 });
             },
             error: function (response) {
-                swal("Error!", "Revise los campos, si el error persiste contactese con un administrador.", "error"); 
+                swal("Error!", "Revise los campos, si el error persiste contactese con un administrador.", "error");
             }
         });
         return false;
