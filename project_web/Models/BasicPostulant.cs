@@ -9,5 +9,7 @@ namespace LUG3WebApi.Models
         public string Name{get;set;}
         public string Lastname{get;set;}
         public string State {get;set;}
+        
+        public int Iteration {get; set;}
     }
 }

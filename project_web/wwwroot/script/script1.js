@@ -1,3 +1,21 @@
+// SHOW TOPBUTTON WHEN THE USER SCROLLS DOWN 20PX
+
+window.onscroll = function () { scrollFunction() };
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("topButton").style.display = "block";
+    } else {
+        document.getElementById("topButton").style.display = "none";
+    }
+}
+
+// SCROLL TO THE TOP 
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
 // VALIDATE
 
 $(document).ready(function () {
@@ -64,6 +82,9 @@ $(document).ready(function () {
             },
             infoProg: {
                 required: true
+            },
+            other: {
+                required: "#ot3:selected",
             },
             intProg: {
                 required: true
@@ -138,6 +159,9 @@ $(document).ready(function () {
             infoProg: {
                 required: 'Por favor selecciona una opción.'
             },
+            other: {
+                required: 'Por favor contanos dónde escuchaste del programa.'
+            },
             intProg: {
                 required: 'Por favor contanos porqué te interesa la programación.'
             },
@@ -170,8 +194,18 @@ function hide() {
     }
 }
 
-// AUTOCOMPLETE
+// SHOW OTHER
 
+function hid() {
+    if (document.getElementById("ot3").selected) {
+        $('#others').show();
+    } else {
+        document.getElementById("others").style.display = "none";
+        $('#others').hide();
+    }
+}
+
+// AUTOCOMPLETE
 $(function() {
     var alreadyFilled = false;
     var states = ['Escuela Da Vinci', 'Instituto Tecnológico de Buenos Aires', 'Universidad Abierta Interamericana', 'Universidad de Belgrano', 'Universidad de Buenos Aires', 'Universidad Nacional de La Matanza', 'Universidad de La Plata', 'Universidad de Lomas de Zamora', 'Universidad Tecnológica Nacional'];
@@ -257,6 +291,7 @@ $(document).ready(function () {
             InfoProg: $('select[name=infoProg] option:selected').val(),
             Other: $("#other").val(),
             intProg: $("#intProg").val(),
+            other: $("#other").val(),
             ConverTheme: $('input[name="converTheme"]:checked').val(),
             Cod: $('input[name="cod"]:checked').val(),
             Tools: $("#tools").val(),
@@ -269,7 +304,7 @@ $(document).ready(function () {
             url: "api/Register/",
             data: dataString,
             contentType: "application/json; charset=utf-8",
-            dataType: "json",
+            //dataType: "json",
             success: function (response) {
                 swal({
                     title: "Registro exitoso!",
@@ -279,13 +314,7 @@ $(document).ready(function () {
                 });
             },
             error: function (response) {
-                // swal("Error!", "", "error"); // --> se verifica con jQuery, por alguna extraña razón el modal me funciona sólo acá ._.
-                swal({
-                    title: "Registro exitoso!",
-                    text: "En breve te contactaremos vía e-mail",
-                    icon: "success",
-                    button: "Okey!",
-                });
+                swal("Error!", "Revise los campos, si el error persiste contactese con un administrador.", "error"); 
             }
         });
         return false;

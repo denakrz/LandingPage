@@ -7,11 +7,15 @@ namespace LUG3WebApi.DBModels
     {
         //Esta clase guarda exactamente como esta en la db 
         public int Id {get;set;}
+        [Required]
         public string Name{get;set;}
+        [Required]
         public string Lastname{get;set;}
+        
         public string Dni {get;set;}
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public string Birthday{get;set;}
+        public int IdAddress{get;set;}
         [Required]
         [EmailAddress]
         public string Email {get;set;}
@@ -21,5 +25,7 @@ namespace LUG3WebApi.DBModels
         public string GitHub{get;set;}
         public string LinkedIn{get;set;}
         public int IdState {get;set;}
+        public int Iteration {get;set;}
+        public int Country {get;set;}
     }
 }

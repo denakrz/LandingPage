@@ -6,10 +6,13 @@
     <title> Bienvenido a Lagash University! </title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="/script/script1.js"></script>
     <link rel="shortcut icon" href="/css/img/Lagash_iso_azul_32.png">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/style_modal.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/css/style_index.css" />
+
 </head>
 <body>
     <div class="father">
@@ -19,7 +22,7 @@
                     <a target="_blank" href="https://lagash.com"> <img src="./css/img/Lagash_blanco_16.png"></a>
                 </div>
                 <div class="nav">
-                    <a href="#"><i class="fas fa-home"></i>Sign In</a>
+                    <a id="myBtn" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><i class="fas fa-home"></i>Sign In</a>
                 </div>
             </div>
             <div class="anclas">
@@ -28,7 +31,21 @@
                 </div>
             </div>
         </header>
-
+        <button onclick="topFunction()" id="topButton" tittle="Go to the top">↑</button>
+        <div id="id01" class="modal" style="display:none">
+            <form class="modal-content animate" action="#">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <img src="/css/img/Lagash-university- Azul--Logo-con-contenido-transparente.png" alt="LogoLU" class="avatar">
+                </div>
+                <div class="container">
+                    <input type="text" placeholder="Usuario" name="user" required>
+                    <input type="password" placeholder="Contraseña" name="psw" required>
+                    <span class="psw"><a id="ps" href="#">Olvidaste la contraseña?</a></span>
+                    <button id="but1" type="submit">Login</button>
+                </div>
+            </form>
+        </div>
         <nav class="navs">
             <div class="links">
                 <div class="a">
@@ -38,7 +55,6 @@
                     <h3 id="h3">Mucho más que una capacitación!</h3>
                     <a id="aa" href="#infoProg">Hace click acá para saber más sobre el programa.</a>
                 </div>
-
                 <div class="b">
                     <br>
                     <a href="#gp"><img id="img91" alt="Logo LU" src="/css/img/ofi.PNG"></a>
@@ -46,7 +62,6 @@
                     <h3 id="h3">Nuestras oficinas</h3>
                     <a id="aa" href="#gp">Conoce dónde trabajamos en Buenos Aires.</a>
                 </div>
-
                 <div class="c">
                     <br>
                     <a href="#ins"><img id="img91" alt="Logo LU" src="/css/img/fol.PNG"></a>
@@ -56,13 +71,14 @@
                 </div>
             </div>
         </nav>
-
         <section class="text">
             <div class="text">
                 <h1 id="open">Tu primer experiencia en el mundo de la tecnología</h1>
                 <p id="txt">Conectamos jóvenes apasionados y entusiastas <br> con desafiantes oportunidades de desarrollo profesional.</p><br>
             </div>
         </section>
+
+        <button onclick="topFunction()" id="topButton" tittle="Go to the top">↑</button>
 
         <main class="main">
             <section class="section" id="infoProg">
@@ -89,28 +105,22 @@
                     <article class="img02"></article>
                 </div>
             </section>
-
             <div class="line3"></div>
-
             <div class="text2" id="ins">
                 <h3>Donde nos encontramos!</h3>
                 <p>Clickeá en el mapa para saber la ubicación de nuestras oficinas en Buenos Aires ;)</p>
             </div>
-
             <section class="lagash" id="gp">
                 <div class="gps">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.461222067692!2d-58.42750538505179!3d-34.61778316574894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca5a50513993%3A0x7880a54c77ea2485!2sLagash!5e0!3m2!1ses-419!2sar!4v1542389690810" width="100%" height="600px" frameborder="0" style="border:0" allowfullscreen></iframe>
                 </div>
             </section>
-
             <div class="text3" id="ins">
                 <h1>Abiertas las inscripciones</h1>
                 <p>Si tenes entre 18 y 24 años hace click en el botón de abajo y rellena el formulario</p>
                 <a href="/form.html"><button id="in"> Aplica! </button></a>
             </div>
-
         </main>
-
         <footer class="footer">
             <div class="foot">
                 <hr>
@@ -123,7 +133,16 @@
                 <a target="_blank" href="https://lagash.blog/"><i class="fab fa-blogger-b"></i></a>
             </div>
         </footer>
-
     </div>
+    <script>
+        
+        var modal = document.getElementById('id01');
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>

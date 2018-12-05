@@ -3,9 +3,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace LUG3WebApi.DBModels
 {
-    public class StudiesGet
+    public class Studiesget
     {
-        
         [Required]
         public string Study{get;set;}
         [Required]

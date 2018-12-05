@@ -3,20 +3,21 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> Aplica! </title>
+    <title> Aplica! </title> 
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.3.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="script/moment.js"></script>
     <script type="text/javascript" src="script/script1.js"></script>
     <link rel="shortcut icon" href="/css/img/Lagash_iso_azul_32.png">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
+    
 </head>
-
 <body>
     <div class="father">
         <header class="header">
@@ -37,25 +38,23 @@
             </div>
         </header>
 
+        <button onclick="topFunction()" id="topButton" tittle="Go to the top">↑</button>
+
         <section class="section">
             <div class="form">
-
                 <form autocomplete="off" method="POST" id="formPostulants">
-
                     <p>
                         <br><br>
                         <h4>Datos personales <br></h4> <hr>
                     </p>
                     <br>
                     <br>
-
                     <label>
                         Nombre *<br>
                         <input type="text" id="name" name="name" maxlength="50" required="required" pattern="[A-Za-z ]+">
                     </label>
                     <br>
                     <br>
-
                     <label>
                         Apellido *<br>
                         <input type="text" id="lastname" name="lastname" maxlength="50" required="required" pattern="[A-Za-z ]+">
@@ -74,7 +73,6 @@
                     </label>
                     <br>
                     <br>
-
                     <label>
                         E-mail * <br>
                         <input type="email" id="email" name="email" required="required" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
@@ -103,7 +101,6 @@
                         <i class="fab fa-linkedin"></i>LinkedIn <br>
                         <input type="text" id="linkedin" name="linkedin" maxlength="40" pattern="[a-zA-Z0-9_]+">
                     </label>
-
                     <br>
                     <br>
                     <p>
@@ -123,15 +120,14 @@
                     <label>
                         Institución *<br>
                     </label>
-                        <div class="autocomplete">
-                            <label>
+                    <div class="autocomplete">
+                        <label>
                             <input type="text" id="institution" name="institution" required="required" pattern="[A-Za-z0-9 ]+">
                             <span class="close">Cancel</span>
-                            </label>
-                            <div class="dialog">
-                            </div>
+                        </label>
+                        <div class="dialog">
                         </div>
-
+                    </div>
                     <br>
                     <label>
                         Carrera *<br>
@@ -179,7 +175,7 @@
                             Nivel escrito *<br><br>
                         </label>
                         <label>
-                            <select name="writtenEnglish" id="writtenEnglish" >
+                            <select name="writtenEnglish" id="writtenEnglish">
                                 <option value="">Seleccione uno</option>
                                 <option value="basic">Basico</option>
                                 <option value="intermediate">Intermedio</option>
@@ -202,7 +198,6 @@
                     </div>
                     <br>
                     <br>
-
                     <label>
                         ¿Qué tecnologías te gustaría aprender? *<br><br>
                     </label>
@@ -215,21 +210,25 @@
                         ¿Dónde escuchaste del programa? *<br><br>
                     </label>
                     <label>
-                        <select name="infoProg" id="infoProg" required>
+                        <select name="infoProg" id="infoProg" required onclick="hid()">
                             <option value="">Seleccione uno</option>
-                            <option value="Social Networks">Redes sociales</option>
-                            <option value="University">Facultad</option>
-                            <option value="By a friend">Por un amigo</option>
+                            <option value="Social Networks" onclick="hid()">Redes sociales</option>
+                            <option value="University" onclick="hid()">Facultad</option>
+                            <option value="By a friend" onclick="hid()">Por un amigo</option>
+                            <option id="ot3" value="Other" onclick="hid()">Otros</option>
                         </select>
                     </label>
                     <br>
                     <br>
-                    <label>
-                        Otros ¿Cual? <br><br>
-                    </label>
-                    <label>
-                        <input type="text" id="other" name="other" maxlength="100" pattern="[A-Za-z ]+">
-                    </label>
+                    <div id="others" style="display:none">
+                        <label>
+                            Otros ¿Cual? <br><br>
+                        </label>
+
+                        <label>
+                            <input type="text" id="other" name="other" maxlength="100" pattern="[A-Za-z ]+">
+                        </label>
+                    </div>
                     <br>
                     <br>
                     <label>
@@ -283,18 +282,14 @@
                         </label>
                     </div>
                     <br>
-
                     <div class="buttonD">
                         <label>
                             <input class="button2" id="reset" type="reset" value="Descartar :(">
                         </label>
                     </div>
                 </form>
-
             </div>
-
         </section>
-
         <footer class="footer">
             <div class="foot">
                 <p>Follow us</p>
@@ -304,7 +299,6 @@
                 <a target="_blank" href="https://lagash.blog/"><i class="fab fa-blogger-b"></i></a>
             </div>
         </footer>
-
     </div>
 </body>
 </html>

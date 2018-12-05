@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +10,8 @@ using LUG3WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
-namespace LUG3WebApi.Controllers{
+namespace LUG3WebApi.Controllers
+{
     [Route("api/[controller]")]
     [ApiController]
     public class PostulantController
@@ -23,12 +24,16 @@ namespace LUG3WebApi.Controllers{
         }
 
         [HttpGet]
-        [Route ("/api/Postulant/{id}")]
-        public PostulantInfo Get (int Id){
-            if (Id != 0){
+        [Route("/api/Postulant/{id}")]
+        public PostulantInfo Get(int Id)
+        {
+            if (Id != 0)
+            {
                 PostulantInfo info = dbm.GetPostulantInfo(Id);
                 return info;
-            } else {
+            }
+            else
+            {
                 PostulantInfo info = null;
                 return (info);
             }

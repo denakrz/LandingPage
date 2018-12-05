@@ -24,15 +24,17 @@ namespace LUG3WebApi.Controllers{
             fnc = new AddedFunctions();
         }
 
+
+        //GUARDA EL FORMULARIO
         [HttpPost]
         [Route ("/api/Register/")]
         public ActionResult Post([FromBody] Form form)
         {
-            if (this.ModelState.IsValid){
+            if (this.ModelState.IsValid)
+            {
                 Postulant postulant = fnc.createPostulant(form);
-
                 //Aca valida datos y guarda en db
-                int IdPostulantDb = dbm.Insert(postulant);
+                int IdPostulantDb = dbm.InsertPostulant(postulant);
                 int IdStudyform = fnc.validateIdStudy(form);
                 int IdStudiesStateform = fnc.validateIdStudyState(form);           
                 Studies studies = fnc.createStudies(form, IdPostulantDb, IdStudyform, IdStudiesStateform);
@@ -42,6 +44,7 @@ namespace LUG3WebApi.Controllers{
                 var barray = Encoding.UTF8.GetBytes(formString);
 
                 Attached attached = new Attached {
+                    Name = "InitForm",
                     Link = barray,
                     IdTypeAttached = 1
                 };
@@ -53,13 +56,14 @@ namespace LUG3WebApi.Controllers{
             }
 
         }
-
+        
+        // GUARDA UN ESTUDIO
         [HttpPost]
         [Route ("/api/Register/Study")]
-        public ActionResult PostStudy([FromBody] StudiesGet studyget)
+        public ActionResult PostStudy([FromBody] Studiesget studyget)
         {
-            if (this.ModelState.IsValid){
-                
+            if (this.ModelState.IsValid)
+            {   
                 int IdStudyform = fnc.validateIdStudyget(studyget);
                 int IdStudiesStateform = fnc.validateIdStudyStateget(studyget);
 
@@ -72,6 +76,7 @@ namespace LUG3WebApi.Controllers{
             
         }
 
+        // MANEJO DE LOGIN 
         [HttpPost]
         [Route ("/api/Register/Login/")]
         public IActionResult Login([FromBody] Login login)
