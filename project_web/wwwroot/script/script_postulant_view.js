@@ -36,7 +36,7 @@ function getjson() {
         type: "GET",
         url: "/api/management/Postulant/2", // + postulantId(), -> cuando el login se digne a andar.
         success: function (data) {
-            //document.getElementById("user-name").innerHTML = "Welcome" + data.Name;
+            //document.getElementById("user_name").innerHTML = "Welcome" + data.Name;
             console.log(data);
         },
         fail: function (data) {
