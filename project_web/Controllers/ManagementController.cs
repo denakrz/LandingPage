@@ -140,6 +140,15 @@ namespace LUG3WebApi.Controllers
             return (dbm.GetState(IdPostulant));
         }
 
+        //DEVUELVE EL ESTADO EN SI
+        [HttpGet]
+        [Route ("State/All/{IdPostulant}")]
+        //GET api/Management/State/All/{IdPostulant}
+        public IEnumerable<StateC> GetStateById (int IdPostulant)
+        {
+            return dbm.GetStateById(IdPostulant);
+        }
+
 
         //GESTION DE LA DIRECCION DEL POSTULANTE
         [HttpPost]

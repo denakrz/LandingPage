@@ -14,7 +14,7 @@ namespace LUG3WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PostulantController
+    public class PostulantController : ControllerBase
     {
         private readonly IDBManager dbm;
 

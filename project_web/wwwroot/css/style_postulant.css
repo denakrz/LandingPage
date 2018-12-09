@@ -152,7 +152,6 @@
     }
 
 .back {
-    background: #666;
     width: 100%;
     height: 500px;
 }
@@ -299,4 +298,138 @@
 
 .progress .circle.active .title {
     color: rgba(0,0,0,.4);
+}
+
+@media all and (max-width:1300px) {
+    .progress {
+        width: 100%;
+        height: auto;
+        margin: none;
+        display: none;
+    }
+
+    .body {
+        margin-top: 0px;
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    .father {
+        margin: none;
+    }
+
+    .t001 {
+        display: none;
+    }
+
+    .header {
+        background-image: url(./img/header.png);
+        background-position: center;
+        background-attachment: contain;
+        background-size: cover;
+        display: flex;
+        flex-flow: column nowrap;
+        height: 200px;
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    .menu {
+        display: flex;
+        flex-flow: row nowrap;
+        overflow: hidden;
+        height: 40px;
+        align-items: center;
+    }
+
+    .nav a {
+        float: right;
+        color: white;
+        font-size: 10px;
+        text-transform: uppercase;
+        padding: 0 3px;
+        margin-bottom: 3px;
+        letter-spacing: 1px;
+        text-decoration: none;
+    }
+
+        .nav a:hover {
+            transform: scale(1.2);
+        }
+
+    .text-info {
+        height: auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 4px;
+        padding: 0%;
+    }
+
+    .img {
+        height: 180px;
+        width: 180px;
+    }
+
+        .img #lu {
+            width: 100%;
+            height: auto;
+        }
+
+    #l2 {
+        width: 100px;
+    }
+
+    .t001 h3 {
+        color: #000;
+        font-family: 'Poppins';
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 1;
+    }
+
+    .t001 p {
+        font-size: 16px;
+    }
+
+    .lineh1 {
+        width: 30px;
+        border-bottom: 2px solid #1E4BF0;
+    }
+
+    .imgTrack {
+        margin: 2%;
+    }
+
+    .t002 {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        flex-wrap: wrap;
+        margin-top: 18px;
+        margin-left: 0px;
+    }
+
+        .t002 #ach3 {
+            font-size: 20px;
+        }
+
+        .t002 p {
+            font-size: 18px;
+        }
+
+    .aa01 {
+        margin-top: 2%;
+    }
+
+    .back {
+        background: white;
+        width: 100%;
+        height: 500px;
+    }
+
+    .interview {
+        margin-top: 4%;
+    }
 }

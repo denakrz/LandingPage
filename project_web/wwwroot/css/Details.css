@@ -1,0 +1,266 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    min-height: 100vh;
+    padding-bottom: 60px;
+    
+}
+
+.PersonalData, .OtherKnowledge, .Studies, .AttachedFiles, .Meetings, .Result, .State   {
+    padding: 10px;
+    margin: 0 2.5% 15px 2.5%;
+    display: flex;
+    background-color: #f0f0f0;
+    flex-flow: column;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #f6f6f6;
+    border-radius: 5px;
+    flex: auto;
+    width: 35%;
+    transition: all .2s ease-in-out;
+    
+}
+
+.PersonalData:hover, .OtherKnowledge:hover, .Studies:hover, .AttachedFiles:hover, .Meetings:hover, .Result:hover, .State:hover   {
+    box-shadow: 5px 5px 15px #a8a8a8;
+}
+
+#PersonalData, #OtherKnowledge, #studies, #AttachedFiles, #Meetings, #Result, #estado {
+    background-color: #dfdfdf;
+    padding: 4px;
+    border-radius: 5px;
+    margin-top: 5px;
+
+}
+
+#PersonalData li, #OtherKnowledge li, #studies li, #AttachedFiles li, #Meetings li, #Result li, #estado li {
+    margin: 5px;
+    padding: 3px;
+    padding-left: 7px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    transition: all 0.15s;
+    overflow-x: auto;
+
+}
+
+#PersonalData li:hover, #OtherKnowledge li:hover, #studies li:hover, #AttachedFiles li:hover, #Meetings li:hover, #Result li:hover, #estado li:hover {
+    background-color: #c6f6f6;
+    border-color: #c6f6f6;
+}
+
+.header {
+    display: flex;
+    background-color: #1e4aef;
+    width: 100%;
+    flex-flow: column nowrap;
+
+}
+
+.menu {
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    height: 50px;
+    align-items: center;
+    /* background: rgba(0, 0, 0, .1); */
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+
+}
+
+.menu a {
+    margin-right: 17px;
+    font-size: 0.7500em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .2s ease-in-out;
+    padding: 0 5px;
+    color: white;
+}
+
+.menu a:hover {
+    transform: scale(1.4);
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.nav {
+    flex: 1 1 auto;
+    overflow: hidden;
+}
+
+.menu a:active {
+    transition: all .002s ease-in;
+
+}
+
+.title {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+h1 {
+    margin: 0;
+}
+
+.buttonBack {
+    justify-items: flex-end;
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: row-reverse;
+    height: 40px;
+    margin-right: 1%;
+    margin-top: 1%;
+
+}
+
+
+.content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-items: flex-start;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+
+}
+
+.postulant {
+    flex-basis: 1;
+    margin-left: 1%;
+    margin-top: 1%;
+}
+
+.foot-text {
+    color: white;
+    padding: 5px;
+}
+
+.footer {
+    display: flex;
+    flex-flow: row;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #1e4aef;
+    justify-content: center;
+
+}
+
+button {
+    display: flex;
+    border-radius: 4px;
+    border: none;
+    color: #FFFFFF;
+    background-color: #96C832;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 5px;
+    width: auto;
+    transition: all 0.3s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.column {
+    min-height: 30px;
+}
+
+.edit button {
+    font-size: 1em;
+    height: 30px;
+    bottom: 0;
+}
+
+.edit button:hover {
+    background: #FFFFFF;
+    color: #96C832;
+    box-shadow: inset 0 0 0 3px #96C832;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+}
+
+
+.input 
+{
+    padding: 3px;
+    margin: 5px;
+    border: 0;
+    border-radius: 2px;
+    /* background-color: rgb(216, 216, 216); */
+}
+.modal
+{
+    
+background-color:#e7e7e9 ;
+}
+
+
+@media(max-width: 600px){
+    .postulant
+    {
+        font-size: 0.9em;
+    }
+}
+@media(max-width: 320px){
+    .postulant
+    {
+        font-size: 0.7em;
+        margin-top: 6px;
+    }
+    .buttonBack{
+        margin-bottom: 1px;
+    }
+}

@@ -40,6 +40,7 @@ namespace LUG3WebApi.DBManagerAll
 
         //Gestion State
         int GetState(int IdPostulant);
+        IEnumerable<StateC> GetStateById(int IdPostulant);
         void UpdateState(int IdPostulant, int IdState);
         
         //Devuelve formulario

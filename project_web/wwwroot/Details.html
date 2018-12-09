@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Detalles postulante</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <link rel="shortcut icon" href="./css/img/Lagash_iso_azul_16.ico">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <script type="text/javascript" src="script/Details.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
+        crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/Details.css" />
+</head>
+
+<body class="body">
+    <div class="container">
+        <div class="header">
+            <header>
+                <div class="logo">
+                    <a href="https://lagash.com"> <img src="./css/img/Lagash_blanco_16.png"></a>
+                </div>
+                <div class="menu">
+                    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                    <a href="#"><i class="fas fa-sign-out-alt"></i>Sign Out</a>
+                </div>
+            </header>
+        </div>
+        <br><br>
+        <div class="main">
+            <div class="title">
+                <div id="postulant" class="postulant">
+
+                </div>
+                <div class="buttonBack"> <button type="button" onclick="location.href='list_post.html'" class="button"><span>Atras</span></button></div>
+            </div>
+            <br>
+            <div class="content">
+                <div class="PersonalData">
+                    <b>Datos Personales</b>
+
+                    <div id="PersonalData" class="column">
+
+                    </div>
+
+                    <a href="#modalContentPersonalData" rel="modal:open">
+                        <div class="edit"><button class="editPersonalData" id="editPersonalData"><i class="fas fa-user-edit"></i>
+                                Editar</button></div>
+                    </a>
+                    <!--Modal -->
+                    <div id="modalContentPersonalData" class="modal">
+
+
+                            <a href="#" rel="modal:close"><div class="edit" ><button class="update" id="updatePersonalData"><i class="fas fa-check"></i>Actualizar</button></div></a>
+                        <a href="#" rel="modal:close">
+                            <div class="edit"><button class="cancel" id="cancelPersonalData"><i class="fas fa-ban"></i>
+                                    Cancelar</button></div>
+                        </a>
+
+                    </div>
+
+                </div>
+                <br>
+                <div class="OtherKnowledge">
+                    <b>Otros conocimientos</b>
+
+                    <div id="OtherKnowledge" class="column">
+
+                    </div>
+                    <a class="btn" href="#modalContentOtherKnowledge" rel="modal:open">
+                        <div class="edit"><button class="editOtherKnowledge" id="editOtherKnowledge"><i class="far fa-edit"></i>
+                                Editar</button></div>
+                    </a>
+                    <!--Modal -->
+                    <div id="modalContentOtherKnowledge" class="modal">
+
+                            <a href="#" rel="modal:close"><div class="edit" ><button class="update"><i class="fas fa-check"></i>Actualizar</button></div></a>
+                        <a href="#" rel="modal:close">
+                            <div class="edit"><button class="cancel" id="cancelOtherKnowledge"><i class="fas fa-ban"></i>
+                                    Cancelar</button></div>
+                        </a>
+                    </div>
+
+                </div>
+                <br>
+                <div class="Studies">
+                    <b>Formacion</b>
+
+                    <div id="studies" class="column">
+
+                    </div>
+                    <a class="btn" href="#modalContentStudies" rel="modal:open">
+                        <div class="edit"><button class="editStudies" id="editStudies"><i class="far fa-edit"></i>
+                                Editar</button></div>
+                    </a>
+                    <!--Modal -->
+                    <div id="modalContentStudies" class="modal">
+
+                            <a href="#" rel="modal:close"><div class="edit" ><button class="update"><i class="fas fa-check"></i>Actualizar</button></div></a>
+                        <a href="#" rel="modal:close">
+                            <div class="edit"><button class="cancel" id="cancelStudies"><i class="fas fa-ban"></i>
+                                    Cancelar</button></div>
+                        </a>
+                    </div>
+
+                </div>
+                <br>
+                <div class="AttachedFiles">
+                    <b>Archivos adjuntos</b>
+
+                    <div id="AttachedFiles" class="column">
+
+                    </div>
+                    <a class="btn" href="#modalContentAttachedFiles" rel="modal:open">
+                        <div class="edit"><button class="editAttachedFiles" id="editAttachedFiles"><i class="far fa-edit"></i>
+                                Editar</button></div>
+                    </a>
+                    <!--Modal -->
+                    <div id="modalContentAttachedFiles" class="modal">
+
+                            <a href="#" rel="modal:close"><div class="edit" ><button class="update"><i class="fas fa-check"></i>Actualizar</button></div></a>
+                        <a href="#" rel="modal:close">
+                            <div class="edit"><button class="cancel" id="cancelAttachedFiles"><i class="fas fa-ban"></i>
+                                    Cancelar</button></div>
+                        </a>
+                    </div>
+                    <a class="btn" href="#modalContentAttachedFilesAdd" rel="modal:open">
+                        <div class="edit"><button class="add" id="add"><i class="fas fa-plus"></i> Agregar</button></div>
+                    </a>
+                    <!--Modal -->
+                    <div id="modalContentAttachedFilesAdd" class="modal">
+
+                            <a href="#" rel="modal:close"><div class="edit" ><button class="update"><i class="fas fa-check"></i>Agregar</button></div></a>
+                        <a href="#" rel="modal:close">
+                            <div class="edit"><button class="cancel" id="cancelAttachedFilesAdd"><i class="fas fa-ban"></i>
+                                    Cancelar</button></div>
+                        </a>
+                    </div>
+                </div>
+                <br>
+                <div class="Meetings">
+                    <b>Reuniones</b>
+
+                    <div id="Meetings" class="column">
+
+                    </div>
+                    <a class="btn" href="#modalContentMeetings" rel="modal:open">
+                        <div class="edit"><button class="editMeetings" id="editMeetings"><i class="far fa-edit"></i>
+                                Editar</button></div>
+                    </a>
+                    <!--Modal -->
+                    <div id="modalContentMeetings" class="modal">
+
+                            <a href="#" rel="modal:close"><div class="edit" ><button class="update" id="updateMeeting"><i class="fas fa-check"></i>Actualizar</button></div></a>
+                        <a href="#" rel="modal:close">
+                            <div class="edit"><button class="cancel" id="cancelMeetings"><i class="fas fa-ban"></i>
+                                    Cancelar</button></div>
+                        </a>
+                    </div>
+                </div>
+                <br>
+                <div class="Result">
+                    <b>Resultados</b>
+
+                    <div id="Result" class="column">
+
+                    </div>
+                    <a class="btn" href="#modalContentResult" rel="modal:open">
+                        <div class="edit"><button class="editResult" id="editResult"><i class="far fa-edit"></i>
+                                Editar</button></div>
+                    </a>
+                    <!--Modal -->
+                    <div id="modalContentResult" class="modal">
+
+                            <a href="#" rel="modal:close"><div class="edit" ><button class="update" id="updateResult"><i class="fas fa-check"></i>Actualizar</button></div></a>
+                        <a href="#" rel="modal:close">
+                            <div class="edit"><button class="cancel" id="cancelResult"><i class="fas fa-ban"></i>
+                                    Cancelar</button></div>
+                        </a>
+                    </div>
+                </div>
+                <br>
+                <div class="State">
+                    <b>estado</b>
+
+                    <div id="estado" class="column">
+
+                    </div>
+                    <a class="btn" href="#modalContentState" rel="modal:open">
+                        <div class="edit"><button class="editState" id="editState"><i class="far fa-edit"></i>
+                                Editar</button></div>
+                    </a>
+                    <!--Modal -->
+                    <div id="modalContentState" class="modal">
+
+                        <a href="#" rel="modal:close"><div class="edit" ><button class="update"><i class="fas fa-check"></i>Actualizar</button></div></a>
+                        <a href="#" rel="modal:close">
+                            <div class="edit"><button class="cancel" id="cancelState"><i class="fas fa-ban"></i>
+                                    Cancelar</button></div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="foot">
+                    <p class="foot-text">&copy; Copyright 2018 </p>
+
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+
+</html>

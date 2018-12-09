@@ -6,7 +6,7 @@
     <title> Bienvenido a Lagash University! </title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script src="/script/script1.js"></script>
+    <script src="/script/script_index.js"></script>
     <link rel="shortcut icon" href="/css/img/Lagash_iso_azul_32.png">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
@@ -41,7 +41,8 @@
                 <div class="container">
                     <input type="text" placeholder="Usuario" name="user" required>
                     <input type="password" placeholder="Contraseña" name="psw" required>
-                    <span class="psw"><a id="ps" href="#">Olvidaste la contraseña?</a></span>
+                    <br />
+                    <!--<span class="psw"><a id="ps" href="#">Olvidaste la contraseña?</a></span>-->
                     <button id="but1" type="submit">Login</button>
                 </div>
             </form>
@@ -134,15 +135,5 @@
             </div>
         </footer>
     </div>
-    <script>
-        
-        var modal = document.getElementById('id01');
-
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
 </body>
 </html>

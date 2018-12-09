@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LUG3WebApi.Authentication;
+using LUG3WebApi.Authentication.Model;
 using LUG3WebApi.DBManagerAll;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,7 +29,18 @@ namespace LUG3WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            
+            services.AddTransient<IUserStore<ApplicationUser>, UserStore>();
+            services.AddTransient<IRoleStore<ApplicationRole>, RoleStore>();
+ 
+            // services.AddIdentity<ApplicationUser, ApplicationRole>()
+            //     .AddDefaultTokenProviders()
+            //     .AddPasswordlessLoginTotpTokenProvider();
+
+            services.AddMvc(options =>
+            {
+                // options.Filters.Add<AuthFilter>();
+            }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSingleton(Configuration);
             services.AddScoped<IDBManager, DBManager>();
         } 
@@ -44,8 +58,7 @@ namespace LUG3WebApi
             }
 
             app.UseStaticFiles();
-            
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
             app.UseMvc();
         }
     }

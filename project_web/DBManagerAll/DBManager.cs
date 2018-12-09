@@ -100,33 +100,33 @@ namespace LUG3WebApi.DBManagerAll
             PostulantInfo postinf;
 
             var sql = "SELECT Id, Name, LastName, IdState from Postulant WHERE Id = @Id";
-            var sql2 = "SELECT TOP 1 Date, Time FROM Meeting WHERE IdPostulant = @Id ORDER BY IdInstance DESC";
+            var sql2 = "SELECT TOP 1 * FROM Meeting WHERE IdPostulant = @Id ORDER BY IdInstance DESC";
 
-            try
+            // try
+            // {
+            using (var conn = new SqlConnection(connStr))
             {
-                using (var conn = new SqlConnection(connStr))
+                conn.Open();
+                postinf = conn.Query<PostulantInfo>(sql, new { @Id = IdPostulant }).FirstOrDefault();
+
+                if (postinf.IdState == 2 || postinf.IdState == 4 || postinf.IdState == 6)
                 {
-                    conn.Open();
-                    postinf = conn.Query<PostulantInfo>(sql, new { @Id = IdPostulant }).FirstOrDefault();
+                    postinf.Meeting = true;
+                    postinf.DateTime = conn.Query<Meeting>(sql2, new { @Id = IdPostulant }).FirstOrDefault().DateTime;
 
-                    if (postinf.IdState == 2 || postinf.IdState == 4 || postinf.IdState == 6)
-                    {
-                        postinf.Meeting = true;
-                        DateNTime datetime = conn.Query<DateNTime>(sql2, new { @IdPostulant = IdPostulant }).FirstOrDefault();
-                        postinf.DateTime = Convert.ToDateTime(datetime.Date + datetime.Time);
-                    }
-                    else
-                    {
-                        postinf.Meeting = false;
-                        postinf.DateTime = null;
-                    }
-                    conn.Close();
                 }
+                else
+                {
+                    postinf.Meeting = false;
+                    postinf.DateTime = null;
+                }
+                conn.Close();
             }
-            catch (Exception)
-            {
-                postinf = null;
-            }
+            // }
+            // catch (Exception)
+            // {
+            //     postinf = null;
+            // }
             return postinf;
         }
         //ADDRESS
@@ -393,6 +393,21 @@ namespace LUG3WebApi.DBManagerAll
             }
             return IdState;
         }   
+
+        
+        public IEnumerable <StateC> GetStateById(int IdPostulant)
+        {
+            var sql = "SELECT st.Id, st.State FROM State st inner join Postulant P on St.Id = P.IdState  where P.Id = @Id";
+            IEnumerable <StateC> state;
+            using(var conn = new SqlConnection(connStr))
+            {
+                conn.Open();
+                state = conn.Query<StateC>(sql, new{ @Id = IdPostulant });
+                conn.Close();
+            }
+            return state;
+            
+        }
         public void UpdateState(int IdPostulant, int IdState)
         {
             var sql = "UPDATE Postulant SET IdState = @IdState WHERE Id = @Id";
